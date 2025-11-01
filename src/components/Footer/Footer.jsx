@@ -14,7 +14,7 @@ const Footer = ({ taskCount, completedCount }) => {
           </p>
         </div>
         <div className="footer-info">
-          <p>© {currentYear} TaskMaster • Built with React</p>
+          <p>© {currentYear} TaskMaster • Built with React by MH JAHED</p>
         </div>
       </div>
     </footer>
