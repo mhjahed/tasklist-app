@@ -1,0 +1,60 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Print Styles */
+@media print {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  /* Page breaks */
+  .analytics-container {
+    page-break-before: always;
+  }
+
+  /* Hide interactive elements */
+  button,
+  .task-checkbox input,
+  .task-card-footer,
+  .task-filters,
+  .btn-clear-completed {
+    display: none !important;
+  }
+
+  /* Adjust card styles for print */
+  .task-card {
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+    margin-bottom: 0.5rem;
+    page-break-inside: avoid;
+  }
+
+  .task-card:hover {
+    transform: none;
+  }
+
+  /* Simplify colors for print */
+  .priority-badge,
+  .category-badge {
+    border: 1px solid #000;
+  }
+}

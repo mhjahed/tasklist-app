@@ -1,0 +1,184 @@
+@media print {
+  /* Reset everything for print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide non-printable elements */
+  .no-print,
+  .header-right,
+  .task-card-footer,
+  .task-filters,
+  .btn-clear-completed,
+  .filter-group,
+  .period-selector {
+    display: none !important;
+  }
+
+  /* Page setup */
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  /* Header for print */
+  .header {
+    position: static;
+    border-bottom: 2px solid #000;
+    margin-bottom: 1cm;
+  }
+
+  .app-title {
+    color: #000 !important;
+  }
+
+  .app-subtitle {
+    color: #333 !important;
+  }
+
+  /* Task cards */
+  .task-card {
+    background: white !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+    margin-bottom: 0.5cm;
+    padding: 0.5cm;
+    page-break-inside: avoid;
+  }
+
+  .task-card:hover {
+    transform: none !important;
+  }
+
+  .task-name {
+    color: #000 !important;
+    font-size: 14pt;
+  }
+
+  .task-notes {
+    color: #333 !important;
+  }
+
+  .task-date {
+    color: #666 !important;
+  }
+
+  /* Badges */
+  .priority-badge,
+  .category-badge {
+    border: 1px solid #000 !important;
+    background: white !important;
+    color: #000 !important;
+  }
+
+  .priority-high {
+    border-color: #dc2626 !important;
+    color: #dc2626 !important;
+  }
+
+  .priority-medium {
+    border-color: #d97706 !important;
+    color: #d97706 !important;
+  }
+
+  .priority-low {
+    border-color: #2563eb !important;
+    color: #2563eb !important;
+  }
+
+  /* Checkbox for print */
+  .task-checkbox {
+    display: inline-block !important;
+  }
+
+  .task-checkbox label {
+    border: 2px solid #000 !important;
+    background: white !important;
+  }
+
+  .task-checkbox input:checked + label {
+    background: #000 !important;
+  }
+
+  /* Stats */
+  .task-stats {
+    margin-bottom: 0.5cm;
+  }
+
+  .stat-value {
+    color: #000 !important;
+  }
+
+  .stat-label {
+    color: #666 !important;
+  }
+
+  /* Sections */
+  .task-form-container {
+    display: none !important;
+  }
+
+  .section-title {
+    color: #000 !important;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0.3cm;
+    margin-bottom: 0.5cm;
+  }
+
+  /* Analytics */
+  .analytics-container {
+    page-break-before: always;
+    margin-top: 1cm;
+  }
+
+  .chart-canvas {
+    border: 1px solid #000;
+  }
+
+  /* Footer */
+  .footer {
+    position: static;
+    border-top: 2px solid #000;
+    margin-top: 1cm;
+    padding-top: 0.5cm;
+  }
+
+  .footer-stats strong {
+    color: #000 !important;
+  }
+
+  /* Grid adjustments */
+  .task-grid {
+    display: block !important;
+  }
+
+  .task-card {
+    width: 100% !important;
+  }
+
+  /* Print header with date */
+  .header::after {
+    content: "Printed on: " attr(data-print-date);
+    display: block;
+    text-align: right;
+    font-size: 10pt;
+    color: #666;
+    margin-top: 0.5cm;
+  }
+}
+
+/* Add print date dynamically */
+@media print {
+  body::before {
+    content: "";
+    display: block;
+    height: 0;
+  }
+}
